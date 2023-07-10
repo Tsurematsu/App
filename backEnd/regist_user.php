@@ -22,8 +22,10 @@
 
         if (count($username_BD)<=0) { // Si no se encontró ningún usuario con el mismo nombre en la base de datos
             $tipo_usuario="client"; // Se define el tipo de usuario como "client"
+            $ruta = "frontEnd/user.html";
             if (str_contains($_POST['email'], "root")) {
                 $tipo_usuario = "admin";
+                $ruta = "frontEnd/admin.html";
             }
             // Se construye la consulta SQL para insertar los datos en la tabla 'usuarios'
             $sql = "INSERT INTO usuarios (email, nombre, usuario, password, observaciones) VALUES (
@@ -34,9 +36,12 @@
                 '" . $tipo_usuario . "'
             )";
 
+
+
             if (add_query($sql)) { // Se ejecuta la consulta para agregar el nuevo usuario a la base de datos
                 Redirection("../", [ // Redirecciona al directorio principal con algunos parámetros de redirección
-                    ['page', 'frontEnd/welcome.html'],
+                    ['page', $ruta],
+                    ['msg', 'cosas'],
                     ['username', $_POST['usuario']]
                 ]);
             } else {
