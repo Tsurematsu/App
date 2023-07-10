@@ -2,6 +2,18 @@ body {
     background-color: #f5f5f5;
     color: #333;
     font-family: Arial, sans-serif;
+    padding-top: 6px;
+    padding-left: 2px;
+}
+
+a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
 
 a {
