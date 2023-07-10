@@ -1,4 +1,6 @@
 <?php 
+    require "../Methods/tools.php";
+    require "../Methods/Database.php";
     if (isset($_GET['tipo_consulta'])) {
         $consult = $_GET['tipo_consulta']; // Se obtiene el valor de 'consulta'
 
@@ -23,7 +25,8 @@
 
 
     function create_category() {
-        
+        $sql = Generar_insert($_POST, "categorias");
+        return  add_query($sql);
     }
 
     function read_category() {

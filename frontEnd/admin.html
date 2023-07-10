@@ -13,12 +13,18 @@
     <h1>Ingresado, Bienvenido admin [%user%]</h1>
 
     <form action="" method="POST">
-        <input type="text" name="ass" placeholder="holla">
-        <button type="name" action="backEnd/CRUD_category.php?tipo_consulta=add">enviar</button>
+        <input type="text" name="#codigo" placeholder="Ingrese el código">
+        <input type="text" name="nombre" placeholder="Ingrese el nombre">
+        <input type="text" name="descripcion" placeholder="Ingrese la descripción">
+        <input type="text" name="observacion" placeholder="Ingrese una observación">
+
+        <button type="js_create" action="backEnd/CRUD_category.php?tipo_consulta=create">enviar</button>
+        <button type="js_read" action="backEnd/CRUD_category.php?tipo_consulta=read">enviar</button>
+        <button type="js_update" action="backEnd/CRUD_category.php?tipo_consulta=update">enviar</button>
+        <button type="js_delete" action="backEnd/CRUD_category.php?tipo_consulta=delete">enviar</button>
     </form>
 
     <script src="/App/js/admin.js"></script>
-
 </body>
 
 </html>

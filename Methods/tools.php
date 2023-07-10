@@ -16,8 +16,17 @@
         $fragmento1="";
         $fragmento2="";
         foreach ($POST_V as $clave => $valor) {
-            $fragmento1 .= $clave . ", ";
-            $fragmento2 .= "\'" . $valor . "\'";
+            if (str_contains($clave, "#")) {
+                $fragmento1 .= substr($clave, 1, strlen($clave)) . ", ";
+                $fragmento2 .= $valor . ", ";
+            }else{
+                $fragmento1 .= $clave . ", ";
+                $fragmento2 .= "'" . $valor . "', ";
+
+            }
         }
+        $sql = str_replace("%val_A%", substr($fragmento1, 0, strlen($fragmento1)-2), $sql);
+        $sql = str_replace("%val_B%", substr($fragmento2, 0, strlen($fragmento2)-2), $sql);
+        return $sql;
     }
 ?>
