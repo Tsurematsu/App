@@ -10,4 +10,14 @@
         $html .= '<script>document.getElementById("redirectForm").submit();</script>';
         echo $html;
     }
+
+    function Generar_insert($POST_V, $tabla)  {
+        $sql = "INSERT INTO $tabla (%val_A%) VALUES (%val_B%);";
+        $fragmento1="";
+        $fragmento2="";
+        foreach ($POST_V as $clave => $valor) {
+            $fragmento1 .= $clave . ", ";
+            $fragmento2 .= "\'" . $valor . "\'";
+        }
+    }
 ?>

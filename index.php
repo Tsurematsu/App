@@ -1,4 +1,7 @@
+
 <?php
+    require 'Methods/Database.php'; // Se importa el archivo que contiene la lógica de conexión a la base de datos
+    
     if (isset($_POST['page'])) {
         // Si se ha enviado una variable 'page' a través del método POST
         $pagina = $_POST['page']; // Se obtiene el valor de 'page'
@@ -19,6 +22,11 @@
         include 'frontend/' . $_GET['page'] . '.html';
     } else {
         // Si no se ha enviado ni 'page' por POST ni por GET, se incluye la página 'home.html' dentro del directorio 'frontEnd'
+        $consulta_categorias = query("SELECT * FROM categorias");
+        $consulta_elementos = query("SELECT * FROM elementos");
+        echo "<script> const \$_categorias = " . json_encode($consulta_categorias) . "; </script>";
+        echo "<script> const \$_elementos = " . json_encode($consulta_elementos) . "; </script>";
+
         include 'frontEnd/home.html';
     }
 ?>
