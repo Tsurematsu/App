@@ -1,5 +1,6 @@
 <?php 
     require '../Methods/Database.php';
+    include '../Methods/tools.php';
     $verify = [
         (isset($_POST['email'])),
         (isset($_POST['nombre'])),
@@ -16,7 +17,6 @@
         $username_BD = query("SELECT nombre FROM usuarios WHERE usuario=". "'" . $_POST['usuario'] . "'");
         if (count($username_BD)<=0) {
             $tipo_usuario="client";
-
             $sql = "INSERT INTO usuarios (email, nombre, usuario, password, observaciones) VALUES (
                 '" . $_POST['email'] . "', 
                 '" . $_POST['nombre'] . "', 
@@ -25,12 +25,15 @@
                 '" . $tipo_usuario . "'
             )";
             if (add_query($sql)) {
-                
+                Redirection("../", [
+                    ['page', 'frontEnd/welcome.html'],
+                    ['username', $_POST['usuario']]
+                ]);
             }else{
                 echo "Error, la consulta no puedo realizarse,  verifica la conexión a la DataBase";
             }
         }else{
-            
+            header('Location: /App?page=regist');
         }
     }
 
