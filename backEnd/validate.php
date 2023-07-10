@@ -6,11 +6,16 @@
         // Obtener los valores ingresados por el usuario
         $usuario = $_POST['username'];
         $password = $_POST['password'];
-        $sql = "SELECT nombre FROM usuarios WHERE usuario = '$usuario' AND password = '$password'";
-        if (count(query($sql))>0) {
+        $sql = "SELECT observaciones FROM usuarios WHERE usuario = '$usuario' AND password = '$password'";
+        $retorno = query($sql);
+        if (count($retorno)>0) {
+            $ruta = "frontEnd/welcome.html";
+            if ($retorno[0]['observaciones']=="admin") {
+                $ruta = "frontEnd/admin.html";
+            }
             // Las credenciales son correctas, redirection a la página de inicio
             Redirection("../", [
-                ['page', 'frontEnd/welcome.html'],
+                ['page', $ruta],
                 ['username', $usuario]
             ]);
         } else {
