@@ -34,9 +34,9 @@ window.addEventListener("load", async() => {
     })
 });
 
-async function call_Funcs(form) {
+async function call_Funcs(form, action = null) {
     let retorno = "nothing";
-    await fetch(form.action, {
+    await fetch(action == null ? form.action : action, {
             method: form.method,
             body: new FormData(form)
         }).then(response => response.text())

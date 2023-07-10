@@ -46,7 +46,7 @@
 
     function delete_product(){
         global $tabla_seleccionada;
-        $sql = "DELETE FROM $tabla_seleccionada WHERE Id_elemento = '" . $_POST['Id_elemento'] . "';";
+        $sql = "DELETE FROM $tabla_seleccionada WHERE Id_elemento = '" . $_POST['Id_elemento'] . "' ORDER BY Id_elemento ASC;";
         return  add_query($sql);
     }
 
