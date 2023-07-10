@@ -10,14 +10,14 @@
         if ($username == 'usuario' && $password == 'contraseña') {
             // Las credenciales son correctas, redireccionar a la página de inicio
             echo "correcto";
-            Redireccion("../", [
+            Redireccion("/App", [
                 ['page', 'frontEnd/welcome.html'],
                 ['username', $_POST['username']]
             ]);
             // exit();
         } else {
             //si las credenciales son incorrectas, redireccionar a la página de login
-            header('Location: ../?page=login');
+            header('Location: /App?page=login');
             echo "incorrecto";
             // exit();
         }
