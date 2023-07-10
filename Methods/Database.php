@@ -17,17 +17,38 @@
     
         return $conexion;
     }
+
     
     function convertirResultadoEnArray($resultado) {
         $arrayResultado = array();
-    
         if ($resultado->num_rows > 0) {
             while ($fila = $resultado->fetch_assoc()) {
                 $arrayResultado[] = $fila;
             }
         }
-    
         return $arrayResultado;
+    }
+    
+    
+    function query($sql) {
+        $conexion = conectarBD("app");
+        $resultado = $conexion->query($sql);
+        $arrayResultado = convertirResultadoEnArray($resultado);
+        $conexion->close();
+        return $arrayResultado;
+    }    
+
+    function add_query($sql) {
+        $conexion = conectarBD("app");
+        $resultado = $conexion->query($sql);
+        $conexion->close();
+    
+        // Verificar si la operación fue exitosa
+        if ($resultado === TRUE) {
+            return true;
+        } else {
+            return false;
+        }
     }
     
 ?>

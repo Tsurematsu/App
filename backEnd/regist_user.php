@@ -13,12 +13,25 @@
         }
     }
     if ($Already) {
-        $conexion = conectarBD("app");
-        $sql = "SELECT * FROM usuarios";
-        $resultado = $conexion->query($sql);
-        $arrayResultado = convertirResultadoEnArray($resultado);
-        print_r($arrayResultado);
-        $conexion->close();
+        $username_BD = query("SELECT nombre FROM usuarios WHERE usuario=". "'" . $_POST['usuario'] . "'");
+        if (count($username_BD)<=0) {
+            $tipo_usuario="client";
+
+            $sql = "INSERT INTO usuarios (email, nombre, usuario, password, observaciones) VALUES (
+                '" . $_POST['email'] . "', 
+                '" . $_POST['nombre'] . "', 
+                '" . $_POST['usuario'] . "', 
+                '" . $_POST['password'] . "', 
+                '" . $tipo_usuario . "'
+            )";
+            if (add_query($sql)) {
+                
+            }else{
+                echo "Error, la consulta no puedo realizarse,  verifica la conexión a la DataBase";
+            }
+        }else{
+            
+        }
     }
 
 ?>
