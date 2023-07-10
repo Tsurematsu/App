@@ -33,7 +33,10 @@
                 echo "Error, la consulta no puedo realizarse,  verifica la conexión a la DataBase";
             }
         }else{
-            header('Location: /App?page=regist');
+            Redirection("../?page=regist", [
+                ['msg', 'El usuario ya existe'],
+            ]);
+            // header('Location: ');
         }
     }
 

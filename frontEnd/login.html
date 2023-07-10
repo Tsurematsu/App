@@ -15,6 +15,14 @@
         <input type="text" name="password">
         <button>ingresar</button>
     </form>
+
+    <p id="msg"></p>
+    <script>
+        element = document.getElementById("msg");
+        if (typeof $_POST !== 'undefined') {
+            element.innerHTML = $_POST['msg'];
+        }
+    </script>
 </body>
 
 </html>

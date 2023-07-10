@@ -15,6 +15,13 @@
         <input type="text" name="password" placeholder="Contraseña">
         <button>registrar</button>
     </form>
+    <p id="msg"></p>
+    <script>
+        element = document.getElementById("msg");
+        if (typeof $_POST !== 'undefined') {
+            element.innerHTML = $_POST['msg'];
+        }
+    </script>
 </body>
 
 </html>

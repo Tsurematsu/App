@@ -15,7 +15,9 @@
             ]);
         } else {
             //si las credenciales son incorrectas, redireccionar a la página de login
-            header('Location: /App?page=login');
+            Redirection("../?page=login", [
+                ['msg', 'usuario o contraseña incorrecta'],
+            ]);
         }
 
     }
