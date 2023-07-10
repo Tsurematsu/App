@@ -15,7 +15,7 @@
         $retorno = query($sql);
 
         if (count($retorno)>0) { // Si se encontraron registros coincidentes
-            $ruta = "frontEnd/welcome.html"; // Ruta predeterminada para redireccionar al usuario
+            $ruta = "frontEnd/user.html"; // Ruta predeterminada para redireccionar al usuario
 
             if ($retorno[0]['observaciones']=="admin") { // Si el usuario es administrador
                 $ruta = "frontEnd/admin.html"; // Se actualiza la ruta de redirección a la página de administrador

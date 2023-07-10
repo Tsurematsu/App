@@ -5,18 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/App/css/regist.css">
 </head>
 
 <body>
     <a href="/App">volver al inicio</a>
-    <form action="backEnd/regist_user.php" method="post">
-        <input type="text" name="email" placeholder="Correo">
-        <input type="text" name="nombre" placeholder="Nombre">
-        <input type="text" name="usuario" placeholder="Usuario">
-        <input type="text" name="password" placeholder="Contraseña">
-        <button>registrar</button>
-    </form>
-    <p id="msg"></p>
+    <div class="parent">
+        <div class="center">
+            <form action="backEnd/regist_user.php" method="post">
+                <h1>Registro</h1>
+                <input type="text" name="email" placeholder="Correo">
+                <input type="text" name="nombre" placeholder="Nombre">
+                <input type="text" name="usuario" placeholder="Usuario">
+                <input type="text" name="password" placeholder="Contraseña">
+                <button>registrar</button>
+                <p id="msg "></p>
+            </form>
+        </div>
+    </div>
     <script>
         element = document.getElementById("msg");
         if (typeof $_POST !== 'undefined') {

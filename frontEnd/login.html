@@ -5,18 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/App/css/login.css">
 </head>
 
 <body>
     <a href="/App">volver al inicio</a>
-    <h1>Login</h1>
-    <form action="/App/backEnd/validate.php" method="post">
-        <input type="text" name="username">
-        <input type="text" name="password">
-        <button>ingresar</button>
-    </form>
+    <div class="parent">
+        <div class="center">
+            <form action="/App/backEnd/validate.php" method="post">
+                <h1>Login</h1>
+                <input type="text" name="username">
+                <input type="text" name="password">
+                <button>ingresar</button>
+                <p id="msg"></p>
+            </form>
+        </div>
+    </div>
 
-    <p id="msg"></p>
     <script>
         element = document.getElementById("msg");
         if (typeof $_POST !== 'undefined') {

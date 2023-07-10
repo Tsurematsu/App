@@ -39,11 +39,15 @@
     }
 
     function update_category() {
-        
+        global $tabla_seleccionada;
+        $sql = Generar_update($_POST, $tabla_seleccionada, "Id_categorias='".$_POST['Id_categorias']."'");
+        return  add_query($sql);
     }
 
     function delete_category(){
-        
+        global $tabla_seleccionada;
+        $sql = "DELETE FROM $tabla_seleccionada WHERE Id_categorias = '" . $_POST['Id_categorias'] . "';";
+        return  add_query($sql);
     }
 
 ?>
