@@ -36,7 +36,6 @@
             Redirection("../?page=regist", [
                 ['msg', 'El usuario ya existe'],
             ]);
-            // header('Location: ');
         }
     }
 
