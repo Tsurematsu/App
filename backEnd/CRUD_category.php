@@ -1,6 +1,8 @@
 <?php 
     require "../Methods/tools.php";
     require "../Methods/Database.php";
+    
+    $tabla_seleccionada = "categorias";
     if (isset($_GET['tipo_consulta'])) {
         $consult = $_GET['tipo_consulta']; // Se obtiene el valor de 'consulta'
 
@@ -25,12 +27,15 @@
 
 
     function create_category() {
-        $sql = Generar_insert($_POST, "categorias");
+        global $tabla_seleccionada;
+        $sql = Generar_insert($_POST, $tabla_seleccionada);
         return  add_query($sql);
     }
 
     function read_category() {
-        
+        global $tabla_seleccionada;
+        $sql = "SELECT * FROM $tabla_seleccionada";
+        return query($sql);
     }
 
     function update_category() {

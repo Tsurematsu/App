@@ -29,4 +29,18 @@
         $sql = str_replace("%val_B%", substr($fragmento2, 0, strlen($fragmento2)-2), $sql);
         return $sql;
     }
+
+    function Generar_update($POST_V, $tabla, $condicion)  {
+        $sql = "UPDATE $tabla SET %val_A% WHERE $condicion;";
+        $fragmento1="";
+        foreach ($POST_V as $clave => $valor) {
+            if (str_contains($clave, "#")) {
+                $fragmento1 .= substr($clave, 1, strlen($clave)) . " = '" . $valor .  "', ";
+            }else{
+                $fragmento1 .= $clave . " = '" . $valor . "', ";
+            }
+        }
+        $sql = str_replace("%val_A%", substr($fragmento1, 0, strlen($fragmento1)-2), $sql);
+        return $sql;
+    }
 ?>
