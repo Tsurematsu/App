@@ -3,8 +3,8 @@
     require "../Methods/Database.php";
     
     $tabla_seleccionada = "elementos";
-    if (isset($_POST['tipo_consulta'])) {
-        $consult = $_POST['tipo_consulta']; // Se obtiene el valor de 'consulta'
+    if (isset($_GET['tipo_consulta'])) {
+        $consult = $_GET['tipo_consulta']; // Se obtiene el valor de 'consulta'
 
         if ($consult == "create") {
             echo json_encode(create_product());

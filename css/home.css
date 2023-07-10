@@ -15,7 +15,7 @@ h1 {
     padding: 20px 0;
 }
 
-div {
+.content {
     margin-bottom: 20px;
     padding: 10px;
     background-color: #fff;

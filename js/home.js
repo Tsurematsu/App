@@ -10,6 +10,20 @@ if (typeof $_categorias !== 'undefined') {
 
 
 }
+
 if (typeof $_elementos !== 'undefined') {
-    console.log($_elementos);
+    template('template_card', $_elementos);
+}
+
+function template(elementID, arrayItem) {
+    let template = document.getElementById(elementID).innerHTML;
+    document.getElementById(elementID).innerHTML = "";
+    arrayItem.forEach(elemento => {
+        let tmp = template;
+        for (let key in elemento) {
+            let value = elemento[key];
+            tmp = tmp.replace("%" + key + "%", value);
+        }
+        document.getElementById(elementID).innerHTML += tmp;
+    });
 }

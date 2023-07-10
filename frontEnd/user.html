@@ -6,29 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="/App/js/tools.js"></script>
+    <link rel="stylesheet" href="/App/css/user.css">
 </head>
 
 <body>
-    <a href="/App">volver al inicio</a>
-    <h1 class="editable">Ingresado, Bienvenido [%user%]</h1>
+    <a class="button" href="/App">volver al inicio</a>
 
-    <form action="" method="POST">
-        <input type="text" name="Id_elemento" placeholder="Ingrese el ID del elemento">
-        <input type="text" name="referencias" placeholder="Ingrese las referencias">
-        <input type="text" name="nombres" placeholder="Ingrese los nombres">
-        <input type="number" name="cantidad" placeholder="Ingrese la cantidad">
-        <input type="number" name="valor" placeholder="Ingrese el valor">
-        <input type="text" name="estado" placeholder="Ingrese el estado">
-        <input type="text" name="lugar" placeholder="Ingrese el lugar">
-        <input type="date" name="fecha_reg">
-        <input type="time" name="hora_reg">
-        <input class="editable" type="text" name="observaciones" placeholder="Ingrese observaciones">
+    <div class="content">
+        <div class="center">
+            <h1 class="editable">Ingresado, Bienvenido [%user%]</h1>
+        </div>
+    </div>
+    <div class="parent">
+        <div class="center">
+            <form action="" method="POST">
+                <input type="text" name="Id_elemento" placeholder="Ingrese el ID del elemento">
+                <input type="text" name="referencias" placeholder="Ingrese las referencias">
+                <input type="text" name="nombres" placeholder="Ingrese los nombres">
+                <input type="number" name="cantidad" placeholder="Ingrese la cantidad">
+                <input type="number" name="valor" placeholder="Ingrese el valor">
+                <input type="text" name="estado" placeholder="Ingrese el estado">
+                <input type="text" name="lugar" placeholder="Ingrese el lugar">
+                <input type="date" name="fechaReg">
+                <input type="time" name="horaReg">
+                <input class="editable" type="text" name="observaciones" placeholder="Ingrese observaciones">
 
-        <button type="js_create" action="backEnd/CRUD_category.php?tipo_consulta=create">crear</button>
-        <button type="js_read" action="backEnd/CRUD_category.php?tipo_consulta=read">leer</button>
-        <button type="js_update" action="backEnd/CRUD_category.php?tipo_consulta=update">editar</button>
-        <button type="js_delete" action="backEnd/CRUD_category.php?tipo_consulta=delete">eliminar</button>
-    </form>
+                <button type="js_create" action="backEnd/CRUD_products.php?tipo_consulta=create">crear</button>
+                <button type="js_read" action="backEnd/CRUD_products.php?tipo_consulta=read">leer</button>
+                <button type="js_update" action="backEnd/CRUD_products.php?tipo_consulta=update">editar</button>
+                <button type="js_delete" action="backEnd/CRUD_products.php?tipo_consulta=delete">eliminar</button>
+            </form>
+        </div>
+    </div>
 
     <script src="/App/js/user.js"></script>
 </body>

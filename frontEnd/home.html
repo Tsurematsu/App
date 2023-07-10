@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/App/css/home.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -13,16 +16,32 @@
     <a href="/App?page=regist">registrarse</a>
     <h1>Pagina de inicio </h1>
 
-    <div>
+    <div class="content">
         <p>Categorías</p>
         <ul id="lista_categorias">
         </ul>
     </div>
-    <div id="seleccion">
+    <div class="content" id="seleccion">
 
     </div>
-    <div id="contenido_general">
+    <div class="content" id="contenido_general">
+        <div class="content_plate">
 
+            <div class="card" id="template_card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Nombre: %nombres%</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">referencias %referencias%</h6>
+                    <p class="card-text">
+                        cantidad (%cantidad%)
+                        <br>valor (%valor%)
+                        <br>estado (%estado%)
+                        <br>lugar (%lugar%)
+                        <br>fehcaReg (%fechaReg%)
+                        <br>horaReg (%horaReg%)
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="/App/js/home.js"></script>
 </body>
