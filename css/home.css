@@ -29,7 +29,7 @@ h1 {
 
 .content {
     margin-bottom: 20px;
-    padding: 10px;
+    padding: 5px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -45,6 +45,15 @@ ul {
 
 #lista_categorias li {
     margin-bottom: 10px;
+    display: inline-block;
+    padding: 10px;
+    transition: background-color ease-in-out 0.2s;
+    background-color: #003655 !important;
+    color: white;
+}
+
+#lista_categorias li:hover {
+    background-color: #053c77f1 !important;
 }
 
 #seleccion {
@@ -56,4 +65,30 @@ ul {
     background-color: #fff;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.text-selection-disable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.card-body {
+    transition: background-color ease-in-out 0.2s;
+    border: solid 0.1px rgb(179, 179, 179);
+    width: 300px;
+    display: inline-block;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.card-body:hover {
+    background-color: #9dbbe7;
+}
+
+#observacion {
+    transition: all ease-in-out 0.2s;
 }

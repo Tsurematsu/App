@@ -19,16 +19,17 @@
 
     <div class="content">
         <p>Categorías</p>
-        <ul id="lista_categorias">
+        <ul class="text-selection-disable" id="lista_categorias">
+            <li onclick="defaul()">Todos</li>
         </ul>
     </div>
-    <div class="content" id="seleccion">
 
+    <div class="content">
+        <h4 id="observacion"></h4>
     </div>
     <div class="content" id="contenido_general">
         <div class="content_plate">
-
-            <div class="card" id="template_card" style="width: 18rem;">
+            <div class="card" id="template_card" style="width: 18rem; display: inline;">
                 <div class="card-body">
                     <h5 class="card-title">Nombre: %nombres%</h5>
                     <h6 class="card-subtitle mb-2 text-body-secondary">referencias %referencias%</h6>
